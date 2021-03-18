@@ -54,11 +54,9 @@ export const burger = {
   price: 18, 
   category: "Lunch", 
   discount: function(person) {
-    if (person === "teacher") {
+    if (person === "teacher" || person === "student") {
       return burger.price - burger.price * .25;
-    } else if(person === "student"){
-      return burger.price - burger.price * .5;
-    } else{
+    }else{
       return burger.price - burger.price * .1;
     }
   }
@@ -117,10 +115,10 @@ Use the getReviewByIndex function below to do the following:
 */
 
 
-function getReviewByIndex(arr,num) {
-  return `${arr[num].name} gave the restaurant a ${arr[num].rating} star review, and their feedback was: ${arr[num].feedback}`
+function getReviewByIndex(arr,index) {
+  return `${arr[index].name} gave the restaurant a ${arr[index].rating} star review, and their feedback was: ${arr[index].feedback}`
 }
-
+console.log(getReviewByIndex(reviews,2));
 
   
 
